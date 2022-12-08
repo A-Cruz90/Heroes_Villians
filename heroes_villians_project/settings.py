@@ -35,9 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'super_types',
-    'supers',
     'rest_framework',
+    'supers',
+    'super_types',
     
 ]
 
@@ -68,6 +68,10 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False
+}
 
 WSGI_APPLICATION = 'heroes_villians_project.wsgi.application'
 

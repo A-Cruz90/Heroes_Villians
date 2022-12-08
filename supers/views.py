@@ -9,13 +9,14 @@ from .models import Super
 
 # Create your views here.
 
-@api_view(['GET','POST',])
-def super_list(request, ):
+@api_view(['GET','POST'])
+def supers_list(request):
     
     if request.method == 'GET':
         supers = Super.objects.all()
         serializer = SupersSerializer(supers, many =True)
-        return Response(serializer.data, status= status.HTTP_200_OK)
+        return Response(serializer.data)
+    
 
     elif request.method == 'POST':
         serializer = SupersSerializer(data=request.data)
